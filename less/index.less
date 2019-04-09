@@ -163,6 +163,10 @@ body {
 
 // font sizes
 @main-header: 2rem;
+@text: 1.6rem;
+
+// img width
+@img-size: 35%;
 
 //----- end variables---------//
 
@@ -178,16 +182,56 @@ html {
 	font-size: 62.5%;
 }
 
-h1 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+blockquote {
 	font-size: @main-header;
+}
+
+p,
+th,
+td,
+li {
+	font-size: @text;
 }
 
 //--- end global elements ---//
 
 
 //--- custom styles --- //
-.container {}
+.container {
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+
+	.img-sm {
+		max-width: @img-size;
+		border-radius: 10px;
+	}
+}
 
 header {
 	.flex-box();
+	flex-direction: column;
+
+}
+
+nav {
+	.flex-box();
+	justify-content: flex-end;
+	margin: 0.75em 0;
+
+
+	a {
+		margin-right: 1rem;
+		font-size: 1.8rem;
+	}
+
+	a:last-child {
+		margin-right: 3rem;
+	}
 }
