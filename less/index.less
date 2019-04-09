@@ -1,5 +1,5 @@
 // Is this working?
-/* http://meyerweb.com/eric/tools/css/reset/ 
+/* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
@@ -146,7 +146,8 @@ body {
 }
 
 // reset above
-// variables
+//------ variables--------//
+// COLORS
 @anakiwa: #A9DFFF;
 @malibu: #7ecaf6;
 @orient: #00578A;
@@ -160,8 +161,30 @@ body {
 @medium-color: @orient;
 @dark-color: @regal-blue;
 
+//----- end variables---------//
 
 
 // mixins
+.flex-box() {
 
-//styles
+	display: flex;
+}
+
+//----- global elements ----//
+html {
+	font-size: 62.5%;
+}
+
+h1 {
+	font-size:
+}
+
+//--- end global elements ---//
+
+
+//--- custom styles --- //
+.container {}
+
+header {
+	.flex-box();
+}
