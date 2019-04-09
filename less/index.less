@@ -199,14 +199,21 @@ li {
 	font-size: @text;
 }
 
+section {
+	.flex-box();
+}
+
 //--- end global elements ---//
 
 
 //--- custom styles --- //
 .container {
+	// container styles
 	width: 90%;
 	margin-left: auto;
 	margin-right: auto;
+
+	.header-info {}
 
 	.img-sm {
 		max-width: @img-size;
