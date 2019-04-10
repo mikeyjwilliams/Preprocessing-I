@@ -344,6 +344,11 @@ p {
 		li {
 			padding: 0.75em;
 			border: 1px solid @light-color;
+
+			// color even items in li skills box.
+			&:nth-child(even) {
+				background-color: @extra-light-color;
+			}
 		}
 
 		li:first-child {
@@ -367,7 +372,7 @@ p {
 		}
 
 		h3 {
-			text-align: left;
+			.center-space();
 		}
 	}
 
@@ -379,7 +384,7 @@ p {
 		}
 
 		h3 {
-			text-align: left;
+			.center-space();
 		}
 	}
 }
@@ -414,21 +419,32 @@ table {
 
 	// width: 100%
 	td {
+		.center-space();
 		padding: 0.75rem;
 		vertical-align: top;
+
 	}
 
-	.tbl-header {
+	tr.tbl-header {
+
+		td {
+			background-color: white;
+		}
+
+
 		td {
 			.center-space();
 			text-transform: capitalize;
 		}
 	}
 
-	td {
-		.center-space();
+	tr {
+
+		&:nth-child(even) {
+			background-color: @extra-light-color;
+		}
+
+
 	}
-
-
 
 }
