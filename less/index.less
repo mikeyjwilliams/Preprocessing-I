@@ -195,6 +195,7 @@ h5,
 h6,
 blockquote {
 	font-size: @main-header;
+	line-height: 1.2;
 }
 
 p,
@@ -228,8 +229,15 @@ section {
 
 	.header-top {
 		.flex-box();
+		justify-content: space-around;
+	}
 
-		.test(aqua);
+	.contact-message {
+		.flex-box();
+		flex-direction: column;
+		justify-content: center;
+		align-content: center;
+		align-items: center;
 	}
 
 	.img-sm {
