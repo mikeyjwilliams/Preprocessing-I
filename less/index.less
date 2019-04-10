@@ -173,8 +173,9 @@ body {
 
 
 // mixins
-.flex-box() {
+.flex-box(@direction: row) {
 	display: flex;
+	flex-direction: @direction;
 }
 
 .m-lr-auto() {
@@ -259,8 +260,7 @@ p {
 	}
 
 	.contact-message {
-		.flex-box();
-		flex-direction: column;
+		.flex-box(column);
 		justify-content: center;
 		align-content: center;
 		align-items: center;
@@ -320,8 +320,8 @@ p {
 
 	.skill-set {
 		width: 48.5%;
-		.flex-box();
-		flex-direction: column;
+		.flex-box(column);
+
 		align-items: center;
 		justify-content: center;
 
@@ -381,8 +381,8 @@ p {
 // .container
 
 header {
-	.flex-box();
-	flex-direction: column;
+	.flex-box(column);
+
 
 }
 
