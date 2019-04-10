@@ -198,10 +198,28 @@ h2,
 h3,
 h4,
 h5,
-h6,
-blockquote {
+h6 {
 	font-size: @main-header;
 	line-height: 1.2;
+}
+
+blockquote {
+	font-size: 3.5rem;
+	line-height: 1.2;
+	background: #f9f9f9;
+	border-left: 10px solid #ccc;
+	margin: 1.5em 10px;
+	padding: 0.5em 10px;
+	quotes: "\201C""\201D""\2018""\2019";
+
+	&:before {
+		color: #ccc;
+		content: open-quote;
+		font-size: 4em;
+		line-height: 0.1em;
+		margin-right: 0.25em;
+		vertical-align: -0.4em;
+	}
 }
 
 p,
@@ -286,19 +304,47 @@ p {
 		.objective {
 			width: 48.5%;
 
-			h2 {
+			h3 {
+				text-align: center;
 				padding-bottom: 0.75em;
 			}
-		}
-
-		.skill-set {
-			width: 48.5%;
-			.flex-box();
-			justify-content: center;
 		}
 	}
 
 	//.obj-skills
+
+	.skill-set {
+		width: 48.5%;
+		.flex-box();
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+
+
+		h3 {
+			padding-bottom: 0.75em;
+		}
+	}
+
+	//.skill-set
+
+	.skills {
+
+		li {
+			padding: 0.75em;
+			border: 1px solid @light-color;
+		}
+
+		li:first-child {
+			border-top-left-radius: 10px;
+			border-top-right-radius: 10px;
+		}
+
+		li:last-child {
+			border-bottom-left-radius: 10px;
+			border-bottom-right-radius: 10px;
+		}
+	}
 }
 
 // .container
