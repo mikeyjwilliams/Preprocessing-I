@@ -256,7 +256,7 @@ p {
 
 	@media(max-width: 500px) {
 		max-width: 100%;
-		margin: 0 5%;
+		margin: 0 2.5%;
 	}
 
 	.header-info {
@@ -281,6 +281,10 @@ p {
 		max-width: @img-size;
 		max-height: @img-size;
 		border-radius: 10px;
+
+		@media(max-width: 500px) {
+			display: none;
+		}
 
 
 	}
