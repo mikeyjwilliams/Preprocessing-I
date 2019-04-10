@@ -254,6 +254,11 @@ p {
 	width: 90%;
 	.m-lr-auto();
 
+	@media(max-width: 500px) {
+		max-width: 100%;
+		margin: 0 5%;
+	}
+
 	.header-info {
 		margin: 0.5em 0.5em;
 		flex-direction: column;
@@ -276,6 +281,8 @@ p {
 		max-width: @img-size;
 		max-height: @img-size;
 		border-radius: 10px;
+
+
 	}
 
 	.width {
@@ -451,3 +458,10 @@ table {
 }
 
 // table
+
+footer {
+	h4 {
+		.center-space();
+		margin-top: 2rem;
+	}
+}
