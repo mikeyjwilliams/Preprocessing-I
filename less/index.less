@@ -174,9 +174,14 @@ body {
 
 // mixins
 .flex-box() {
-
 	display: flex;
 }
+
+.m-lr-auto() {
+	margin-left: auto;
+	margin-right: auto;
+}
+
 
 // test
 .test(@color) {
@@ -206,6 +211,10 @@ li {
 	font-size: @text;
 }
 
+p {
+	line-height: 1.3;
+}
+
 //--- end global elements ---//
 
 
@@ -213,8 +222,7 @@ li {
 .container {
 	// container styles
 	width: 90%;
-	margin-left: auto;
-	margin-right: auto;
+	.m-lr-auto();
 
 	.header-info {
 		margin: 0.5em 0.5em;
@@ -247,8 +255,7 @@ li {
 
 	.header-bottom {
 		width: 90%;
-		margin-right: auto;
-		margin-left: auto;
+		.m-lr-auto();
 		margin-top: 1rem;
 		padding: 1.4rem 1.6rem;
 
@@ -271,12 +278,27 @@ li {
 	}
 
 	//.header-bottom
+
 	.obj-skills {
 		.flex-box();
 		justify-content: space-between;
 
-		.test(salmon);
+		.objective {
+			width: 48.5%;
+
+			h2 {
+				padding-bottom: 0.75em;
+			}
+		}
+
+		.skill-set {
+			width: 48.5%;
+			.flex-box();
+			justify-content: center;
+		}
 	}
+
+	//.obj-skills
 }
 
 // .container
@@ -302,3 +324,5 @@ nav {
 		margin-right: 3rem;
 	}
 }
+
+// nav
