@@ -165,8 +165,9 @@ body {
 @main-header: 2rem;
 @text: 1.6rem;
 
-// img width
+// widths
 @img-size: 25%;
+@hr-width: 90%;
 
 //----- end variables---------//
 
@@ -209,6 +210,11 @@ section {
 	.flex-box();
 }
 
+.width {
+	width: @hr-width;
+
+}
+
 //--- end global elements ---//
 
 
@@ -230,6 +236,7 @@ section {
 	.header-top {
 		.flex-box();
 		justify-content: space-around;
+
 	}
 
 	.contact-message {
