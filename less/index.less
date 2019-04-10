@@ -262,6 +262,12 @@ p {
 	.header-info {
 		margin: 0.5em 0.5em;
 		flex-direction: column;
+
+		@media(max-width: 500px) {
+			// change to top item
+			order: 1;
+
+		}
 	}
 
 	.header-top {
