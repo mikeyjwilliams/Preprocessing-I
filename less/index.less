@@ -265,7 +265,7 @@ p {
 
 		@media(max-width: 500px) {
 			// change to top item
-			order: 1;
+			order: -1;
 
 		}
 	}
@@ -319,7 +319,6 @@ p {
 			color: @light-color;
 			cursor: pointer;
 		}
-
 
 	}
 
@@ -419,6 +418,12 @@ nav {
 	justify-content: flex-end;
 	margin: 0.75em 0;
 
+	@media(max-width: 500px) {
+		flex-direction: column;
+
+		// change order to second item.
+		order: 2;
+	}
 
 	a {
 		margin-right: 1rem;
