@@ -161,8 +161,8 @@ body {
 @medium-color: @orient;
 @dark-color: @regal-blue;
 
-// font sizes
-@main-header: 2rem;
+// fonts
+@main-header-size: 2rem;
 @text: 1.6rem;
 
 // widths
@@ -204,7 +204,7 @@ h3,
 h4,
 h5,
 h6 {
-	font-size: @main-header;
+	font-size: @main-header-size;
 	line-height: 1.2;
 }
 
@@ -354,27 +354,22 @@ p {
 	//.skills
 
 	.work-history {
-		.test(red);
 
 		.work {
-			.m-lr-auto();
-			width: 90%;
+			// table mixin
+			.table-layout();
 		}
-
 
 		h3 {
 			text-align: left;
-
 		}
 	}
 
 	.education-history {
-		.test(aqua);
-
 
 		.education {
-			.m-lr-auto();
-			width: 90%;
+			// table mixin
+			.table-layout();
 		}
 
 		h3 {
