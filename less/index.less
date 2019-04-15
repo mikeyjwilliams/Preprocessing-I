@@ -1,22 +1,90 @@
 // Is this working?
-/* http://meyerweb.com/eric/tools/css/reset/ 
+/* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
 	margin: 0;
 	padding: 0;
 	border: 0;
@@ -24,25 +92,44 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
+
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
 	display: block;
 }
+
 body {
 	line-height: 1;
 }
-ol, ul {
+
+ol,
+ul {
 	list-style: none;
 }
-blockquote, q {
+
+blockquote,
+q {
 	quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
 	content: '';
 	content: none;
 }
+
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
@@ -50,10 +137,375 @@ table {
 
 /* Set every element's box-sizing to border-box */
 * {
-    box-sizing: border-box;
+	box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
+html,
+body {
+	height: 100%;
 }
 
+// reset above
+//------ variables--------//
+// COLORS
+@anakiwa: #A9DFFF;
+@malibu: #7ecaf6;
+@orient: #00578A;
+@regal-blue: #00436A;
+// font colors
+@primary-color: @regal-blue;
+@secondary-color: @orient;
+// color styles.
+@extra-light-color: @anakiwa;
+@light-color: @malibu;
+@medium-color: @orient;
+@dark-color: @regal-blue;
+
+// fonts
+@main-header-size: 2rem;
+@text: 1.6rem;
+@font-stack: 'Questrial', sans-serif;
+
+// widths
+@img-size: 50%;
+@hr-width: 90%;
+
+//----- end variables---------//
+
+
+// mixins
+.flex-box(@direction: row) {
+	display: flex;
+	flex-direction: @direction;
+}
+
+.m-lr-auto() {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.table-layout(@width: 90%) {
+	.m-lr-auto();
+	width: @width;
+}
+
+.center-space() {
+	text-align: center;
+	padding: 0.50rem 0.75rem;
+}
+
+//----- global elements ----//
+html {
+	font-size: 62.5%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-size: @main-header-size;
+	line-height: 1.2;
+	font-family: @font-stack;
+}
+
+blockquote {
+	font-size: 3.5rem;
+	line-height: 1.2;
+	background: #f9f9f9;
+	border-left: 10px solid #ccc;
+	margin: 1.5em 10px;
+	padding: 0.5em 10px;
+	quotes: "\201C""\201D""\2018""\2019";
+
+	&:before {
+		color: #ccc;
+		content: open-quote;
+		font-size: 4em;
+		line-height: 0.1em;
+		margin-right: 0.25em;
+		vertical-align: -0.4em;
+	}
+}
+
+p,
+th,
+td,
+li {
+	font-size: @text;
+}
+
+p {
+	line-height: 1.3;
+}
+
+//--- end global elements ---//
+
+
+//--- custom styles --- //
+.container {
+	// container styles
+	width: 90%;
+	.m-lr-auto();
+
+	@media(max-width: 500px) {
+		max-width: 100%;
+		margin: 0 2.5%;
+	}
+
+	.header-info {
+		margin: 0.5em 0.5em;
+		flex-direction: column;
+
+		@media(max-width: 500px) {
+			// change to top item
+			order: -1;
+
+		}
+	}
+
+	.header-top {
+		.flex-box();
+		justify-content: space-around;
+		padding-bottom: 1.6em;
+
+		@media(max-width: 500px) {
+			.flex-box(column);
+			justify-content: center;
+			align-content: center;
+			padding: 0.75rem 0;
+
+		}
+	}
+
+	.contact-message {
+		.flex-box(column);
+		justify-content: center;
+		align-content: center;
+		align-items: center;
+	}
+
+	.img-sm {
+		max-width: @img-size;
+		max-height: @img-size;
+		border-radius: 10px;
+
+		@media(max-width: 500px) {
+			display: none;
+		}
+
+
+	}
+
+	.width {
+		width: @hr-width;
+
+		@media(max-width: 500px) {
+			display: none;
+		}
+	}
+
+	.header-bottom {
+		width: 90%;
+		.m-lr-auto();
+		margin-top: 1rem;
+		padding: 1.4rem 1.6rem;
+
+		.btn {
+			margin-top: 1em;
+			background-color: @light-color;
+			border-radius: 10px;
+			color: @primary-color;
+			font-size: 2.6rem;
+			padding: 1.6rem 4.5rem;
+		}
+
+		.btn:hover {
+			background-color: @medium-color;
+			color: @light-color;
+			cursor: pointer;
+		}
+
+		@media(max-width:500px) {
+			.flex-box(column);
+			display: flex;
+			order: 5;
+		}
+
+	}
+
+	//.header-bottom
+
+	.obj-skills {
+		.flex-box();
+		justify-content: space-between;
+
+		.objective {
+			width: 48.5%;
+
+			h3 {
+				text-align: center;
+				padding-bottom: 0.75em;
+			}
+		}
+	}
+
+	//.obj-skills
+
+	.skill-set {
+		width: 48.5%;
+		.flex-box(column);
+
+		align-items: center;
+		justify-content: center;
+
+
+		h3 {
+			padding-bottom: 0.75em;
+		}
+	}
+
+	//.skill-set
+
+	.skills {
+
+		li {
+			padding: 0.75em;
+			border: 1px solid @light-color;
+
+			// color even items in li skills box.
+			&:nth-child(even) {
+				background-color: @extra-light-color;
+			}
+		}
+
+		li:first-child {
+			border-top-left-radius: 10px;
+			border-top-right-radius: 10px;
+		}
+
+		li:last-child {
+			border-bottom-left-radius: 10px;
+			border-bottom-right-radius: 10px;
+		}
+	}
+
+	//.skills
+
+	.work-history {
+
+		.work {
+			// table mixin
+			.table-layout();
+		}
+
+		h3 {
+			.center-space();
+		}
+	}
+
+	.education-history {
+
+		.education {
+			// table mixin
+			.table-layout();
+		}
+
+		h3 {
+			.center-space();
+		}
+	}
+}
+
+// .container
+
+header {
+	.flex-box(column);
+
+
+}
+
+nav {
+	.flex-box();
+	justify-content: flex-end;
+	margin: 0.75em 0;
+
+	@media(max-width: 500px) {
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		// change order to second item.
+		order: 2;
+	}
+
+	a {
+		margin-right: 1rem;
+		font-size: 1.8rem;
+		color: @primary-color;
+
+		@media(max-width: 500px) {
+			padding: 0.5rem 0;
+			font-size: 2rem;
+			text-decoration: none;
+		}
+	}
+
+	a:hover {
+		color: @light-color;
+	}
+
+	a::visited {
+		color: red;
+	}
+
+	a:last-child {
+		margin-right: 3rem;
+	}
+}
+
+// nav
+table {
+	width: 90%;
+
+	// width: 100%
+	td {
+		.center-space();
+		padding: 0.75rem;
+		vertical-align: top;
+
+	}
+
+	tr.tbl-header {
+
+		td {
+			background-color: white;
+		}
+
+
+		td {
+			.center-space();
+			text-transform: capitalize;
+		}
+	}
+
+	tr {
+
+		&:nth-child(even) {
+			background-color: @extra-light-color;
+		}
+
+
+	}
+
+
+}
+
+// table
+
+footer {
+	h4 {
+		.center-space();
+		margin-top: 2rem;
+	}
+}
